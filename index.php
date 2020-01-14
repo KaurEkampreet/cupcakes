@@ -18,7 +18,7 @@
     <div class="row">
         <input class="col-6" type="text" name="name" placeholder="Please input your name."><br>
     </div>
-    <h2> Cupcakes flavors</h2>
+    <!--h2> Cupcakes flavors</h2>
     <input type="checkbox" name="flavor" value="The Grasshopper"> The Grasshopper<br>
     <input type="checkbox" name="flavor" value="Whiskey Maple Bacon"> Whiskey Maple Bacon<br>
     <input type="checkbox" name="flavor" value="Carrot Walnut"> Carrot Walnut<br>
@@ -26,8 +26,16 @@
     <input type="checkbox" name="flavor" value="Red Velvet"> Red Velvet<br>
     <input type="checkbox" name="flavor" value="Lemon Drop"> Lemon Drop<br>
     <input type="checkbox" name="flavor" value="Tiramisu"> Tiramisu <br>
-    <button type="button" class="btn btn-success mt-2" >Order</button>
-
+    <button type="button" class="btn btn-success mt-2" >Order</button>-->
+    <?php
+    include "functions.php";
+    foreach ($cupcakes as $key => $value) {
+    echo " <input class='form-check-inline' type='checkbox' name='flavor[]' value='$key'=>$value  </input>" . "<br>";
+    }
+    ?>
+</div>
+<button type="submit" name="submit" class="btn btn-success mb-3">Order</button>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery , Popper.js, Bootstrap JS -->
