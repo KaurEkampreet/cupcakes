@@ -52,7 +52,37 @@ error_reporting(E_ALL);
     ?>
     <button type="submit" name="submit" class="btn btn-success mb-3">Order</button>
 
-</div>
+    <div class="container">
+        <?php
+        //display user's order with summary
+        if(isset($_POST['submit'])) {
+            $name = $_POST["name"];
+            $cFlavors = $_POST["flavor"];
+            $count = 0;
+            echo " Thank you " . $name . ", Below is your ";
+            echo " order summary:" . "<br>";
+            echo "<ul>";
+            $isvalid = true;
+            foreach ($cFlavors as $item) {
+                if (array_key_exists("$item", $cupcakes)) {
+                    echo "<li>" . $cupcakes["$item"] . "</li>";
+                    $count++;
+                } else {
+                    echo "<p class='text-danger'>Invalid Information. Please check your order. </p>";
+                    $isvalid = false;
+                    break;
+                }
+            }
+            if (($isvalid)) {
+                echo "<h5 class='text-info'> Total Order:  $" . $count * 3.50 . "</h5>";
+                echo "</ul>";
+            }
+        }
+        ?>
+    </div>
+
+
+    </div>
 </form>
 
     <!-- jQuery , Popper.js, Bootstrap JS -->
