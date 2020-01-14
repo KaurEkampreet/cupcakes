@@ -28,6 +28,8 @@ error_reporting(E_ALL);
 <form id="CupcakeForm" method="post">
 <div class="container">
     <img src="8878.jpeg" alt="cupcake-pic" class="float-right mr-3" width="250" height="250">
+    <link rel="icon" type="image/png"
+          href="choco.jpg">
     <h1>Cupcakes Fundraiser</h1>
     Your name:
     <div class="row">
